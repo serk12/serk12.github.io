@@ -24,5 +24,10 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
     "gulp-wait": "0.0.2"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.0",
+    "aos": "^3.0.0-beta.6",
+    "typewriter-effect": "^2.5.2"
   }
 }

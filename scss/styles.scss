@@ -34,19 +34,19 @@
 */
 
 // Define base and accent colors
-$base-color: #3498db;
+$base-color: #45352D;
 $base-color-hover: darken($base-color, 10%);
 
 // Define background colors
-$background: #fff;
-$background-alt: #f2f2f5;
+$background: #F2E5DE;
+$background-alt: #CCA997;
 
 // Define border colors
-$border: #dcd9d9;
+$border: #171717;
 
 // Define text colors
-$heading: #374054;
-$text: #74808a;
+$heading: #3F3129;
+$text: #454545;
 
 /*
     ---------------------
@@ -203,7 +203,7 @@ header {
 #mobile-menu-open {
     display: none;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
     right: 15px;
     top: 10px;
     color: $base-color;
@@ -212,6 +212,10 @@ header {
     padding: 0 7px;
     border-radius: 4px;
     background: $background;
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-duration: 0.75s;
 }
 
 #mobile-menu-close {
@@ -393,7 +397,7 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba($base-color-hover, 0.8);
+    background: rgba($base-color-hover, 0.7);
     z-index: 1;
 }
 
@@ -453,12 +457,31 @@ footer {
         color: $heading;
     }
 
-    p {
+    .normalabout {
         color: $text;
         margin: 0;
+        opacity: 1;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
     }
+
+    .keyabout {
+      transition: color .25s ease-in-out;
+      -moz-transition: color .25s ease-in-out;
+      -webkit-transition: color .25s ease-in-out;
+    }
+
 }
 
+#about:hover{
+  .normalabout {
+    opacity: .25;
+  }
+  .keyabout {
+    color: #8C3B3B;
+  }
+}
 /*
     --------------------------------
     ----- 6. Experience Styles -----
@@ -491,8 +514,8 @@ footer {
         width: 3px;
         background: $base-color;
         z-index: 0;
-    }
 
+    }
     &:after {
         position: absolute;
         content: '';
@@ -524,7 +547,7 @@ footer {
     h4 {
         font-size: 1.2em;
         font-weight: 300;
-        color: #7e8890;
+        color: $text;
         margin: 0 0 15px 0;
     }
 
@@ -567,7 +590,7 @@ footer {
     left: 0;
     top: 10px;
     font-weight: 300;
-    color: #374054;
+    color: $text;
 }
 
 /*
@@ -646,7 +669,7 @@ footer {
     max-width: 900px;
     margin: 0 auto 30px auto;
     overflow: hidden;
-    background: #fff;
+    background: $background;
     border-radius: 4px;
 }
 
@@ -735,7 +758,7 @@ footer {
 
     h2 {
         margin: 0 0 15px 0;
-        color: #fff;
+        color: $background;
         font-weight: 500;
     }
 }

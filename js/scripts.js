@@ -9,9 +9,21 @@
     Description: This file contains all the scripts associated with the single-page
     portfolio website.
 */
+AOS.init({duration: 1000, mirror: true, ease: 'ease-in-out-quart'});
+$(document).ready(function() {
+  var app = document.getElementById('typewriter');
+  var typewriter = new Typewriter(app, {
+      loop: true,
+      strings: ['Security Researcher', 'Software Developer', 'Bug Hunter', 'Avid Reader'],
+      autoStart: true,
+  });
+setTimeout( function(){
+    $('#mobile-menu-open').addClass('fixed');
+},1000);
+    $('#mobile-menu-open').css('position','fixed');
+});
 
 (function($) {
-
     // Remove no-js class
     $('html').removeClass('no-js');
 
@@ -62,8 +74,14 @@
         });
 
         // Add icons to each block
+        var first=true;
         $this.find('.vtimeline-point').each(function() {
+          if (first == true) {
+            $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker animated infinite bounce"></i></div>');
+          }else{
             $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker"></i></div>');
+          }
+          first = false;
         });
 
         // Add dates to the timeline if exists
@@ -73,7 +91,6 @@
                 $(this).parent().prepend('<span class="vtimeline-date">'+date+'</span>');
             }
         });
-
     });
 
     // Open mobile menu
