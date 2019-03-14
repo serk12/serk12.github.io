@@ -70,7 +70,8 @@ setTimeout( function(){
 
         // Create each timeline block
         $userContent.each(function() {
-            $(this).addClass('vtimeline-content').wrap('<div class="vtimeline-point"><div class="vtimeline-block"></div></div>');
+            $(this).addClass('vtimeline-content').wrap('<div class="vtimeline-block"></div>');
+            $(this).parent().prepend('<div class="vtimeline-point"></div>');
         });
 
         // Add icons to each block
@@ -88,7 +89,7 @@ setTimeout( function(){
         $this.find('.vtimeline-content').each(function() {
             var date = $(this).data('date');
             if (date) { // Prepend if exists
-                $(this).parent().prepend('<span class="vtimeline-date">'+date+'</span>');
+                //$(this).append('<span class="vtimeline-date">'+date+'</span>');
             }
         });
     });
