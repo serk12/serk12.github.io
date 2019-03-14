@@ -62,37 +62,6 @@ setTimeout( function(){
         }, 500);
     });
 
-    // Create timeline
-    $('#experience-timeline').each(function() {
-
-        $this = $(this); // Store reference to this
-        $userContent = $this.children('div'); // user content
-
-        // Create each timeline block
-        $userContent.each(function() {
-            $(this).addClass('vtimeline-content').wrap('<div class="vtimeline-block"></div>');
-            $(this).parent().prepend('<div class="vtimeline-point"></div>');
-        });
-
-        // Add icons to each block
-        var first=true;
-        $this.find('.vtimeline-point').each(function() {
-          if (first == true) {
-            $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker animated infinite bounce"></i></div>');
-          }else{
-            $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker"></i></div>');
-          }
-          first = false;
-        });
-
-        // Add dates to the timeline if exists
-        $this.find('.vtimeline-content').each(function() {
-            var date = $(this).data('date');
-            if (date) { // Prepend if exists
-                //$(this).append('<span class="vtimeline-date">'+date+'</span>');
-            }
-        });
-    });
 
     // Open mobile menu
     $('#mobile-menu-open').click(function() {
