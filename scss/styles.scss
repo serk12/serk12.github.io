@@ -34,19 +34,19 @@
 */
 
 // Define base and accent colors
-$base-color: #45352D;
+$base-color: #339E66;
 $base-color-hover: darken($base-color, 10%);
 
 // Define background colors
-$background: #F2E5DE;
-$background-alt: #CCA997;
+$background: #95dbE5;
+$background-alt: #078181;
 
 // Define border colors
 $border: #171717;
 
 // Define text colors
-$heading: #3F3129;
-$text: #454545;
+$heading: #000000;
+$text: #000000;
 
 /*
     ---------------------
@@ -452,13 +452,14 @@ footer {
 #about {
     padding: 75px 15px;
     border-bottom: 1px solid $border;
-
+    font-size: 22px;
+    
     h2 {
         color: $heading;
     }
 
     .normalabout {
-        color: $text;
+        color: $text; 
         margin: 0;
         opacity: 1;
         transition: opacity .25s ease-in-out;
@@ -476,10 +477,10 @@ footer {
 
 #about:hover{
   .normalabout {
-    opacity: .25;
+    opacity: .75;
   }
   .keyabout {
-    color: #8C3B3B;
+    color: #418c3b;
   }
 }
 /*
